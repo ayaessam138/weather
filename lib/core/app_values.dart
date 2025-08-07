@@ -23,8 +23,8 @@ class AppFontSize {
 }
 
 class AppPadding {
-  static final p30 = 30.r;
-  static final p20 = 20.r;
+  static final p30 = 30.sp;
+  static final p20 = 20.sp;
 }
 
 class AppRadius {
