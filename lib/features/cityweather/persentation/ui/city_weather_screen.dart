@@ -131,8 +131,8 @@ class CityWeatherScreen extends StatelessWidget {
 
                               SizedBox(
                                 height: 100.h,
-                                child: Image.network("",
-                                  // 'https://openweathermap.org/img/wn/${provider.weather!.icon}@2x.png',
+                                child: Image.network(
+                                  'https://openweathermap.org/img/wn/${provider.weather!.icon}@2x.png',
                                   errorBuilder: (context, error, stackTrace) {
                                     return Image.asset(
                                       "asset/images/placeholder.png",
