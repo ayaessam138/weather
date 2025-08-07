@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weather/features/cityweather/persentation/ui/city_weather_screen.dart';
 
 void main() => runApp(
-  DevicePreview(enabled: !kReleaseMode, builder: (context) => MyApp()),
+  DevicePreview(enabled: false, builder: (context) => MyApp()),
 );
 
 class MyApp extends StatelessWidget {

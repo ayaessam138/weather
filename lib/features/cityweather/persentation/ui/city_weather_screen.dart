@@ -35,6 +35,7 @@ class CityWeatherScreen extends StatelessWidget {
                   child: ConstrainedBox(
                     constraints: BoxConstraints(maxWidth: 600.w),
                     child: SingleChildScrollView(
+                      physics: ClampingScrollPhysics(),
                       child: Padding(
                         padding: EdgeInsets.all(AppPadding.p30),
                         child: Column(

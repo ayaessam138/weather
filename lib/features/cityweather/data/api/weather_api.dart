@@ -25,6 +25,7 @@ class WeatherApi {
       );
 
       final json = jsonDecode(response.body);
+      print(response.body);
       return WeatherModel.fromJson(json);
     } catch (e) {
       print("Fetch weather error: $e");
@@ -47,7 +48,7 @@ class WeatherApi {
       },
     );
 
-
+      print(response.body);
 
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(response.body);

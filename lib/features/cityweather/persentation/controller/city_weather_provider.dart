@@ -31,5 +31,6 @@ class WeatherProvider extends ChangeNotifier {
       _isLoading = false;
       notifyListeners();
     }
+    print(_weather);
   }
 }
