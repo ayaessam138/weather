@@ -42,58 +42,61 @@ class CityWeatherScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             // 🔍 Search Field
-                            TextField(
-                              onSubmitted: (value) {
-                                final city = cityController.text.trim();
-                                if (city.isNotEmpty) {
-                                  provider.fetchWeather(city);
-                                  FocusScope.of(
-                                    context,
-                                  ).unfocus(); // hide keyboard
-                                  cityController
-                                      .clear(); // optional: clear input
-                                }
-                              },
-                              controller: cityController,
-                              style: const TextStyle(
-                                color: ColorsManager.white,
-                              ),
-                              decoration: InputDecoration(
-                                labelText: 'Enter city',
-                                labelStyle: const TextStyle(
+                            Padding(
+                              padding:  EdgeInsets.all(10.sp),
+                              child: TextField(
+                                onSubmitted: (value) {
+                                  final city = cityController.text.trim();
+                                  if (city.isNotEmpty) {
+                                    provider.fetchWeather(city);
+                                    FocusScope.of(
+                                      context,
+                                    ).unfocus(); // hide keyboard
+                                    cityController
+                                        .clear(); // optional: clear input
+                                  }
+                                },
+                                controller: cityController,
+                                style: const TextStyle(
                                   color: ColorsManager.white,
                                 ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(
-                                    AppRadius.r12,
-                                  ),
-                                  borderSide: const BorderSide(
+                                decoration: InputDecoration(
+                                  labelText: 'Enter city',
+                                  labelStyle: const TextStyle(
                                     color: ColorsManager.white,
                                   ),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(
-                                    AppRadius.r12,
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(
+                                      AppRadius.r12,
+                                    ),
+                                    borderSide: const BorderSide(
+                                      color: ColorsManager.white,
+                                    ),
                                   ),
-                                  borderSide: const BorderSide(
-                                    color: ColorsManager.white,
-                                    width: 2,
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(
+                                      AppRadius.r12,
+                                    ),
+                                    borderSide: const BorderSide(
+                                      color: ColorsManager.white,
+                                      width: 2,
+                                    ),
                                   ),
-                                ),
-                                suffixIcon: IconButton(
-                                  icon: const Icon(
-                                    Icons.search,
-                                    color: ColorsManager.white,
+                                  suffixIcon: IconButton(
+                                    icon: const Icon(
+                                      Icons.search,
+                                      color: ColorsManager.white,
+                                    ),
+                                    onPressed: () {
+                                      final city = cityController.text.trim();
+                                      if (city.isNotEmpty) {
+                                        provider.fetchWeather(city);
+                                      }
+                                    },
                                   ),
-                                  onPressed: () {
-                                    final city = cityController.text.trim();
-                                    if (city.isNotEmpty) {
-                                      provider.fetchWeather(city);
-                                    }
-                                  },
+                                  filled: true,
+                                  fillColor: ColorsManager.white.withOpacity(0.1),
                                 ),
-                                filled: true,
-                                fillColor: ColorsManager.white.withOpacity(0.1),
                               ),
                             ),
 
